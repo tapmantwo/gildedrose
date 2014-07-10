@@ -11,7 +11,7 @@
         public void DayHasPassed(Item item)
         {
             var sellInAdjuster = new SellInAdjuster(item);
-            sellInAdjuster.DecrementSellIn(1);
+            sellInAdjuster.DecrementSellIn();
 
             var qualityAdjustment = item.SellIn < 0 ? 2 : 1;
 
