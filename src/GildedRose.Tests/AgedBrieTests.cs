@@ -33,5 +33,16 @@ namespace GildedRose.Tests
                 .Should()
                 .HaveNotChangedTheQualityValue();
         }
+
+        [Test]
+        public void SellInDecrements()
+        {
+            ForAgedBrieItem()
+                .WithASellInValueOf(1)
+                .When()
+                .UpdatingQuality()
+                .Should()
+                .HaveDecreasedSellInBy(1);
+        }
     }
 }

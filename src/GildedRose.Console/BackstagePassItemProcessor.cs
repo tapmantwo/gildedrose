@@ -28,6 +28,10 @@
                 {
                     qualityAdjustment = 2;
                 }
+                else
+                {
+                    qualityAdjustment = 1;
+                }
 
                 var qualityAdjuster = new QualityAdjuster(item);
                 qualityAdjuster.IncrementQuality(qualityAdjustment);

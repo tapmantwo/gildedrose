@@ -131,5 +131,27 @@ namespace GildedRose.Tests
                 .Should()
                 .HaveAQualityValueOf(0);
         }
+
+        [Test]
+        public void SellInDecrements()
+        {
+            ForBackstagePassItem()
+                .WithASellInValueOf(1)
+                .When()
+                .UpdatingQuality()
+                .Should()
+                .HaveDecreasedSellInBy(1);
+        }
+
+        [Test]
+        public void QualityIncreasesNormallyIfSellInGreaterThan10Days()
+        {
+            ForBackstagePassItem()
+                .WithASellInValueOf(11)
+                .When()
+                .UpdatingQuality()
+                .Should()
+                .HaveIncreasedQualityBy(1);
+        }
     }
 }
