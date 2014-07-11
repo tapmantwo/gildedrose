@@ -8,15 +8,12 @@
             return typeInferrer.IsAgedBrie();
         }
 
-        public void DayHasPassed(Item item)
+        public void DayHasPassed(AdjustableItem item)
         {
-            var sellInAdjuster = new SellInAdjuster(item);
-            sellInAdjuster.DecrementSellIn();
+            item.DecrementSellIn();
 
             var qualityAdjustment = item.SellIn < 0 ? 2 : 1;
-
-            var qualityAdjuster = new QualityAdjuster(item);
-            qualityAdjuster.IncrementQuality(qualityAdjustment);
+            item.IncrementQuality(qualityAdjustment);
         }
     }
 }

@@ -1,12 +1,25 @@
-namespace GildedRose.Console
+﻿namespace GildedRose.Console
 {
-    internal class QualityAdjuster
+    public class AdjustableItem
     {
         private readonly Item _item;
 
-        public QualityAdjuster(Item item)
+        public AdjustableItem(Item item)
         {
             _item = item;
+        }
+
+        public int SellIn
+        {
+            get
+            {
+                return _item.SellIn;
+            }
+        }
+
+        public void SetQualityToZero()
+        {
+            _item.Quality = 0;
         }
 
         public void IncrementQuality(int by)
@@ -26,6 +39,11 @@ namespace GildedRose.Console
             {
                 _item.Quality = 0;
             }
+        }
+
+        public void DecrementSellIn()
+        {
+            _item.SellIn--;            
         }
     }
 }

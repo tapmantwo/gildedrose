@@ -67,7 +67,7 @@ namespace GildedRose.Console
             {
                 var currentItem = Items[i];
                 var processor = processors.First(p => p.HandlesThisTypeOfItem(currentItem));
-                processor.DayHasPassed(currentItem);
+                processor.DayHasPassed(new AdjustableItem(currentItem));
             }
         }
     }

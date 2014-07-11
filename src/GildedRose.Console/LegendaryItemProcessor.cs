@@ -8,7 +8,7 @@
             return typeInferrer.IsLegendary();
         }
 
-        public void DayHasPassed(Item item)
+        public void DayHasPassed(AdjustableItem item)
         {
             // Do not alter the item
         }

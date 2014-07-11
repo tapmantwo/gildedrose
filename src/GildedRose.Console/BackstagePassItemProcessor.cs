@@ -8,14 +8,13 @@
             return typeInferrer.IsBackstagePass();
         }
 
-        public void DayHasPassed(Item item)
+        public void DayHasPassed(AdjustableItem item)
         {
-            var sellInAdjuster = new SellInAdjuster(item);
-            sellInAdjuster.DecrementSellIn();
+            item.DecrementSellIn();
 
             if (item.SellIn < 0)
             {
-                item.Quality = 0;
+                item.SetQualityToZero();
             }
             else
             {
@@ -33,8 +32,7 @@
                     qualityAdjustment = 1;
                 }
 
-                var qualityAdjuster = new QualityAdjuster(item);
-                qualityAdjuster.IncrementQuality(qualityAdjustment);
+                item.IncrementQuality(qualityAdjustment);
             }
         }
     }

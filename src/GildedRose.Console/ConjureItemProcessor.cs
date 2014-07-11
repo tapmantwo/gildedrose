@@ -8,15 +8,13 @@ namespace GildedRose.Console
             return itemInferrer.IsConjure();
         }
 
-        public void DayHasPassed(Item item)
+        public void DayHasPassed(AdjustableItem item)
         {
-            var sellInAdjuster = new SellInAdjuster(item);
-            sellInAdjuster.DecrementSellIn();
+            item.DecrementSellIn();
 
             var qualityAdjustment = item.SellIn < 0 ? 4 : 2;
 
-            var qualityAdjuster = new QualityAdjuster(item);
-            qualityAdjuster.DecrementQuality(qualityAdjustment);
+            item.DecrementQuality(qualityAdjustment);
         }
     }
 }

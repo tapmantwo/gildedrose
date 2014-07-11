@@ -4,6 +4,6 @@ namespace GildedRose.Console
     {
         bool HandlesThisTypeOfItem(Item item);
 
-        void DayHasPassed(Item item);
+        void DayHasPassed(AdjustableItem item);
     }
 }
