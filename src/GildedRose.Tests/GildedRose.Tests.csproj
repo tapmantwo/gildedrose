@@ -42,15 +42,8 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgedBrieTests.cs" />
-    <Compile Include="BackstagePassItemTests.cs" />
-    <Compile Include="LegendaryItemTests.cs" />
-    <Compile Include="ConjureTests.cs" />
-    <Compile Include="StandardItemTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScenarioBuilder.cs" />
-    <Compile Include="Scenario.cs" />
-    <Compile Include="ScenarioTester.cs" />
+    <Compile Include="TestAssemblyTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GildedRose.Console\GildedRose.Console.csproj">
